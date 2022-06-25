@@ -15,10 +15,12 @@ class UsersListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+        self.loadListOfUsers()
     }
     
     private func loadListOfUsers() {
         guard let urlString = URL(string: "https://api.github.com/users?since=0") else { return }
+        
         APIManager.getUsers(url: urlString) { _ in
             
         }
